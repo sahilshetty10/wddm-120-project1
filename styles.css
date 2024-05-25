@@ -1,0 +1,13 @@
+:root {
+    --light-primary: #ffffff;
+    --light-secondary: #000000;
+    --dark-primary: #000000;
+    --dark-secondary: #f9f9f9;
+    --color-primary: var(--light-primary);
+    --color-secondary: var(--light-secondary);
+}
+.dark {
+    background-color: var(--dark-primary);
+    color: var(--dark-secondary);
+}
+
