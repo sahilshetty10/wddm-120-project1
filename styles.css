@@ -3,11 +3,38 @@
     --light-secondary: #000000;
     --dark-primary: #000000;
     --dark-secondary: #f9f9f9;
-    --color-primary: var(--light-primary);
-    --color-secondary: var(--light-secondary);
+}
+body {
+    background-color: var(--light-primary);
+    color: var(--light-secondary);
 }
 .dark {
     background-color: var(--dark-primary);
     color: var(--dark-secondary);
+}
+
+
+/* NavBar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100vw;
+    box-sizing: border-box;    
+}
+
+#hover-element {
+    border: #000000 1px solid;
+    padding: 1rem;
+}
+
+nav > ul {
+    display: flex;
+    gap: 1rem;
+}
+li {
+    list-style: none;
 }
 

@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Hello World</h1>
-    <button onclick="handleToggle()">Toggle</button>
-    <script>
-        function handleToggle() {
-            document.body.classList.toggle('dark');
-        }
-    </script>
-</body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- NavBar -->
+    <header>
+      <h1>Movie App</h1>
+      <!-- Hover for alert -->
+      <div id="hover-element">Hover Here for Alert</div>
+      <!-- Dark Mode toggle -->
+      <button id="dark-mode-toggle">Darkmode</button>
+        <!-- NavBar Links -->
+      <nav>
+        <ul>
+          <li><a href="#">dummy link1</a></li>
+          <li><a href="#">dummy link2</a></li>
+          <li><a href="#">dummy link3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <script src="script.js"></script>
+  </body>
 </html>
