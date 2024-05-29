@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- NavBar -->
-    <header>
+    <header id="navbar">
       <h1>Movie App</h1>
       <!-- Hover for alert -->
       <div id="hover-element">Hover Here for Alert</div>
@@ -26,13 +26,14 @@
     <!-- Aside Section -->
     <aside>
       <ul id="categories">
-        <li><a href="#" onclick="renderMovies()">Movies</a></li>
-        <li><a href="#" onclick="renderTv()">TV Shows</a></li>
-        <li><a href="#">Favourites</a></li>
+        <li onclick="renderMovies()">Movies</li>
+        <li onclick="renderTv()">TV Shows</li>
+        <li>Favourites</li>
+        <ul id="fav-container"></ul>
       </ul>
     </aside>
     <!-- Main Section -->
-    <main>
+    <main>      
       <!-- Hero -->
       <section id="hero">
         <h2 id="hero-title">Featured Movies</h2>
