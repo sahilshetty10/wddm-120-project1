@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Setting color scheme to light by default -->
+<html lang="en" data-color-scheme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Movie App</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -37,25 +38,23 @@
       <!-- Hero -->
       <section id="hero">
         <h2 id="hero-title">Featured Movies</h2>
-        <!-- hero slider -->
-        <div id="hero-container">
-          <div id="hero-name"></div>
-          <img
-            id="hero-img"
-            src="https://image.tmdb.org/t/p/w780/4XM8DUTQb3lhLemJC51Jx4a2EuA.jpg"
-            alt=""
-          />
-        </div>
+        <div id="hero-container"></div>
       </section>
+      <!-- Trending -->
       <section id="trending">
         <h2 id="trending-title"></h2>
         <div id="trending-container"></div>
       </section>
+      <!-- Top Rated -->
       <section id="top-rated">
         <h2 id="top-rated-title"></h2>
         <div id="top-rated-container"></div>
       </section>
     </main>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Movie App; Made with &hearts; by Sahil Shetty</p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
