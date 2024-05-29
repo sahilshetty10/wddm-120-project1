@@ -14,7 +14,7 @@
       <div id="hover-element">Hover Here for Alert</div>
       <!-- Dark Mode toggle -->
       <button id="dark-mode-toggle">Darkmode</button>
-        <!-- NavBar Links -->
+      <!-- NavBar Links -->
       <nav>
         <ul>
           <li><a href="#">dummy link1</a></li>
@@ -23,6 +23,38 @@
         </ul>
       </nav>
     </header>
+    <!-- Aside Section -->
+    <aside>
+      <ul id="categories">
+        <li><a href="#" onclick="renderMovies()">Movies</a></li>
+        <li><a href="#" onclick="renderTv()">TV Shows</a></li>
+        <li><a href="#">Favourites</a></li>
+      </ul>
+    </aside>
+    <!-- Main Section -->
+    <main>
+      <!-- Hero -->
+      <section id="hero">
+        <h2 id="hero-title">Featured Movies</h2>
+        <!-- hero slider -->
+        <div id="hero-container">
+          <div id="hero-name"></div>
+          <img
+            id="hero-img"
+            src="https://image.tmdb.org/t/p/w780/4XM8DUTQb3lhLemJC51Jx4a2EuA.jpg"
+            alt=""
+          />
+        </div>
+      </section>
+      <section id="trending">
+        <h2 id="trending-title"></h2>
+        <div id="trending-container"></div>
+      </section>
+      <section id="top-rated">
+        <h2 id="top-rated-title"></h2>
+        <div id="top-rated-container"></div>
+      </section>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
