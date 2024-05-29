@@ -1,14 +1,31 @@
 /* Dark and Light Mode Color Schemes */
 [data-color-scheme="dark"] {
   color-scheme: dark;
-  --primary: #424242;
-  --secondary: #f9f9f9;
+  --primary: #161616;
+  --secondary: #ff0000;
+    ::-webkit-scrollbar {
+      width: 15px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ff0000;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #161616;
+    }
 }
 
 [data-color-scheme="light"] {
   color-scheme: light;
-  --primary: #f9f9f9;
-  --secondary: #424242;
+  --primary: #ffffff;
+  --secondary: #161616;
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+  ::-webkit-scrollbar-thumb {
+      background: #161616;
+      border-radius: 10px;
+  }
 }
 
 /* General Styles */
@@ -51,6 +68,16 @@ header a {
 nav > ul {
   display: flex;
   gap: 1rem;
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+    padding: 1rem;
+    cursor: pointer;
+    color: var(--secondary);
+    background-color: var(--primary);
+    border-radius: 1rem;
+    border: var(--secondary) 1px solid;
 }
 
 /* Sidebar */

@@ -1,4 +1,7 @@
-// Variables to hold fetched data
+// TMDB API key
+const api_key = "1f54bd990f1cdfb230adb312546d765d";
+
+// Variables to hold fetched data to optimize performance and avoid refetching and unnecessary API calls
 let featuredMovies = [];
 let trendingMovies = [];
 let topRatedMovies = [];
@@ -7,9 +10,16 @@ let trendingTvShows = [];
 let topRatedTvShows = [];
 
 // Dark mode toggle
-document.getElementById("dark-mode-toggle").addEventListener("click", () => {
-  const theme = document.documentElement.getAttribute("data-color-scheme");
-  document.documentElement.setAttribute("data-color-scheme", theme === "light" ? "dark" : "light");
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+darkModeToggle.addEventListener("click", () => {
+  const currentTheme = document.documentElement.getAttribute("data-color-scheme");
+  if (currentTheme === "light") {
+    document.documentElement.setAttribute("data-color-scheme", "dark");
+    darkModeToggle.innerText = "Switch to Light Mode";
+  } else {
+    document.documentElement.setAttribute("data-color-scheme", "light");
+    darkModeToggle.innerText = "Switch to Dark Mode";
+  }
 });
 
 // Window alert on hover
@@ -26,14 +36,14 @@ async function fetchData() {
     topRatedMoviesResponse,
     featuredTvResponse,
     trendingTvResponse,
-    topRatedTvResponse
+    topRatedTvResponse,
   ] = await Promise.all([
-    fetch("https://api.themoviedb.org/3/discover/movie?api_key=1f54bd990f1cdfb230adb312546d765d"),
-    fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=1f54bd990f1cdfb230adb312546d765d"),
-    fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=1f54bd990f1cdfb230adb312546d765d"),
-    fetch("https://api.themoviedb.org/3/discover/tv?api_key=1f54bd990f1cdfb230adb312546d765d"),
-    fetch("https://api.themoviedb.org/3/trending/tv/day?api_key=1f54bd990f1cdfb230adb312546d765d"),
-    fetch("https://api.themoviedb.org/3/tv/top_rated?api_key=1f54bd990f1cdfb230adb312546d765d")
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}`),
+    fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${api_key}`),
+    fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}`),
+    fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${api_key}`),
+    fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${api_key}`),
+    fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${api_key}`),
   ]);
 
   // Parse JSON responses
@@ -81,7 +91,7 @@ function setTitles(heroTitle, trendingTitle, topRatedTitle) {
 function renderFeatured(items) {
   const container = document.getElementById("hero-container");
   container.innerHTML = "";
-  items.forEach(item => {
+  items.forEach((item) => {
     const { title, name, backdrop_path } = item;
     container.appendChild(createHeroElement(title || name, backdrop_path));
   });
@@ -91,7 +101,7 @@ function renderFeatured(items) {
 function renderTrending(items) {
   const container = document.getElementById("trending-container");
   container.innerHTML = "";
-  items.forEach(item => {
+  items.forEach((item) => {
     const { title, name, poster_path } = item;
     container.appendChild(createCardElement(title || name, poster_path));
   });
@@ -101,7 +111,7 @@ function renderTrending(items) {
 function renderTopRated(items) {
   const container = document.getElementById("top-rated-container");
   container.innerHTML = "";
-  items.forEach(item => {
+  items.forEach((item) => {
     const { title, name, poster_path } = item;
     container.appendChild(createCardElement(title || name, poster_path));
   });
@@ -126,7 +136,7 @@ function createHeroElement(title, poster) {
 
   const imgElement = document.createElement("img");
   imgElement.classList.add("hero-image");
-  imgElement.src = `https://image.tmdb.org/t/p/original${poster}`;
+  imgElement.src = `https://image.tmdb.org/t/p/w780${poster}`;
 
   imgContainer.append(favIcon, imgElement);
   heroCard.append(heroTitle, imgContainer);
